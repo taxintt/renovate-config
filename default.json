@@ -1,0 +1,29 @@
+{
+    "extends": [
+        "config:base",
+        ":timezone(Asia/Tokyo)",
+        ":separateMultipleMajorReleases"
+    ],
+    "labels": [
+        "renovate"
+    ],
+    "dockerfile": {
+        "filematch": [
+            "(^|/)Dockerfile(\\..*)?$"
+        ]
+    },
+    "packageRules": [
+        {
+            "packagePatterns": [
+                "^(?!.*@types).*$"
+            ],
+            "groupName": "default"
+        },
+        {
+            "packagePatterns": [
+                "^@types/.*$"
+            ],
+            "groupName": "devDependencies"
+        }
+    ]
+}
