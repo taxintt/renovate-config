@@ -2,16 +2,12 @@
     "extends": [
         "config:base",
         ":timezone(Asia/Tokyo)",
-        ":separateMultipleMajorReleases"
+        ":separateMultipleMajorReleases",
+        "local>taxintt/renovate-config:docker"
     ],
     "labels": [
         "renovate"
     ],
-    "dockerfile": {
-        "filematch": [
-            "(^|/)Dockerfile(\\..*)?$"
-        ]
-    },
     "packageRules": [
         {
             "packagePatterns": [
