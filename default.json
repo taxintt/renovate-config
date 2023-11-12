@@ -11,12 +11,6 @@
     "packageRules": [
         {
             "packagePatterns": [
-                "^(?!.*@types).*$"
-            ],
-            "groupName": "default"
-        },
-        {
-            "packagePatterns": [
                 "^@types/.*$"
             ],
             "groupName": "devDependencies"
