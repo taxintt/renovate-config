@@ -1,0 +1,19 @@
+{
+  extends: [
+    "config:recommended",
+    ":timezone(Asia/Tokyo)",
+    ":label(renovate)",
+    ":separateMultipleMajorReleases",
+    "helpers:pinGitHubActionDigests",
+  ],
+  schedule: "after 8am and before 5pm every weekday",
+  packageRules: [
+    {
+      "matchPackagePatterns": [
+          "terraform"
+      ],
+      "additionalBranchPrefix": "{{baseDir}}-",
+      "commitMessageSuffix": "({{baseDir}})"
+    }
+  ],
+}
