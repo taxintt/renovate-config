@@ -1,0 +1,34 @@
+{
+  "configMigration": true,
+  "extends": [
+     "config:best-practices"
+  ],
+  "lockFileMaintenance": {
+     "enabled": true
+  },
+  "major": {
+     "automerge": false
+  },
+  "packageRules": [
+     {
+        "matchManagers": [
+           "github-actions"
+        ],
+        "versioning": "semver"
+     },
+     {
+        "enabled": false,
+        "matchUpdateTypes": [
+           "digest"
+        ]
+     },
+     {
+      "matchPackagePatterns": [
+          "terraform"
+      ],
+      "additionalBranchPrefix": "{{baseDir}}-",
+      "commitMessageSuffix": "({{baseDir}})"
+    }
+  ],
+  "platformAutomerge": true
+}
